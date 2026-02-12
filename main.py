@@ -17,7 +17,7 @@ def main():
     args = parser.parse_args()
 
     response = client.models.generate_content(
-        model='gemini-2.5-flash', contents=args
+        model='gemini-2.5-flash', contents=args.user_prompt
     )
     if response.usage_metadata == None:
         raise RuntimeError('Failed API request.')
